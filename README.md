@@ -1,8 +1,8 @@
 ##Goals to reach
 
-- [ ] Landing page (text can be lorem ipsum)
-  - [ ] Part of layout using flex
-  - [ ] Part of layout using grid
+- [x] Landing page (text can be lorem ipsum)
+  - [x] Part of layout using flex
+  - [x] Part of layout using grid
 - [ ] Internalization (next-intl)
   - [ ] Simple support for Polish and English
 - [ ] Dynamic navbar (links to landing page, log in or log out, your data if the user's logged in etc)
