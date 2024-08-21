@@ -5,7 +5,7 @@ export default function Navbar() {
     return (
         <nav>
             <div className="navbar">
-                <div>Logo</div>
+                <div>MindWork</div>
                 <div></div>
                         <Link href="/">Home</Link>
                         <Link href="/login">Login</Link> 
