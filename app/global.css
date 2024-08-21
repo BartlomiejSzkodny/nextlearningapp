@@ -30,8 +30,16 @@ body {
     background-color: #34408f;
 }
 .footerbar {
+    display: grid;
+    grid-template-columns: 80% 10% 10%;
     background-color: #34408f;
+    align-items: center;
     text-align: center;
     padding-top: 20px;
     padding-bottom: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    
+
+    
 }

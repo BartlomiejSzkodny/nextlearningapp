@@ -1,8 +1,12 @@
 
 export default function Home() {
   return (
-    <div>
-      <h1>Home page</h1>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <img src="https://cdn.pixabay.com/animation/2022/12/05/15/23/15-23-06-837_256.gif"/>
+      <div>
+        <h1>Welcome to MindWork</h1>
+        <p>Application that will help you organise your work time.</p>
+      </div>
     </div>
-  );
+    );
 }
