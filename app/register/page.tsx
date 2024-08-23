@@ -7,7 +7,7 @@ export default function Register() {
                     type="text"
                     placeholder="Username"
                     name="Username"
-                    style={{ marginBottom: "10px", textAlignLast: "center" }}
+                    style={{ textAlignLast: "center" }}
                 />
                 <br />
                 <input
