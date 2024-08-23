@@ -1,34 +1,34 @@
 export default function Register() {
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-            <form action="">
-                <h1 style={{ textAlign: "center" }}>Register page</h1>
+            <form action="" style={{ textAlign: "center" }}>
+                <h1 style={{ fontSize: "34px", marginBottom: 10 }}>Register</h1>
                 <input
                     type="text"
                     placeholder="Username"
                     name="Username"
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px", textAlignLast: "center" }}
                 />
                 <br />
                 <input
                     type="email"
                     placeholder="Email"
                     name="Email"
-                    style={{ marginBottom: "10px" }}
+                    style={{marginTop: "10px", textAlignLast: "center" }}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Password"
                     name="Password"
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginTop: "10px" , textAlignLast: "center" }}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Repeat password"
                     name="Repeat password"
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginTop: "10px", textAlignLast: "center" }}
                 />
                 <br />
                 <button
@@ -39,10 +39,17 @@ export default function Register() {
                         borderRadius: "5px",
                         border: "none",
                         cursor: "pointer",
+                        marginTop: "20px",
                     }}
                 >
                     Register
                 </button>
+                <p style={{ marginTop: "10px" }}>
+                    Already have an account? Try{" "}
+                    <a href="/login" style={{ textDecoration: "underline" }}>
+                        Log in
+                    </a>
+                </p>
             </form>
         </div>
     );
