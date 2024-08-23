@@ -1,56 +1,60 @@
 export default function Register() {
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100vh" }}>
-            <form action="" style={{ textAlign: "center" }}>
-                <h1 style={{ fontSize: "34px", marginBottom: 10 }}>Register</h1>
+        <div style={{  display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <form action="">
+                <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Register page</h1>
                 <input
                     type="text"
                     placeholder="Username"
                     name="Username"
-                    style={{ textAlignLast: "center" }}
+                    style={{ marginBottom: "10px" }}
                 />
                 <br />
                 <input
                     type="email"
                     placeholder="Email"
                     name="Email"
-                    style={{marginTop: "10px", textAlignLast: "center" }}
+                    style={{ marginBottom: "10px" }}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Password"
                     name="Password"
-                    style={{ marginTop: "10px" , textAlignLast: "center" }}
+                    style={{ marginBottom: "10px" }}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Repeat password"
                     name="Repeat password"
-                    style={{ marginTop: "10px", textAlignLast: "center" }}
+                    style={{ marginBottom: "10px" }}
                 />
                 <br />
-                <button
-                    style={{
-                        backgroundColor: "blue",
-                        color: "white",
-                        padding: "10px",
-                        borderRadius: "5px",
-                        border: "none",
-                        cursor: "pointer",
-                        marginTop: "20px",
-                    }}
-                >
-                    Register
-                </button>
-                <p style={{ marginTop: "10px" }}>
-                    Already have an account? Try{" "}
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                    <button
+                        style={{
+                            marginTop: "10px",
+                            backgroundColor: "blue",
+                            color: "white",
+                            padding: "10px",
+                            borderRadius: "5px",
+                            border: "none",
+                            cursor: "pointer",
+                        }}
+                    >
+                        Register
+                    </button>
+                </div>
+            </form>
+            <div>
+                <p style={{ marginTop: "10px", textAlign: "center" }}>
+                    Already have an account?{" "}
                     <a href="/login" style={{ textDecoration: "underline" }}>
-                        Log in
+                        Login
                     </a>
                 </p>
-            </form>
+            </div>
         </div>
     );
-    }
+}
