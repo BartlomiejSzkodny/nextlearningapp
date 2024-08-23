@@ -8,7 +8,9 @@ export default function Navbar() {
                 <div>MindWork</div>
                 <div></div>
                         <Link href="/">Home</Link>
-                        <Link href="/login">Login</Link> 
+                        <Link href="/login">Login</Link>
+                        <Link href="/register">Register</Link>
+                <div></div>
             </div>
         </nav>
     );
