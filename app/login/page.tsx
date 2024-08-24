@@ -2,19 +2,19 @@ export default function Login() {
     return (
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <form action="">
-                <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Register page</h1>
+                <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Login</h1>
                 <input
                     type="email"
                     placeholder="Email"
                     name="Email"
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px" ,color: "black"}}
                 />
                 <br />
                 <input
                     type="password"
                     placeholder="Password"
                     name="Password"
-                    style={{ marginBottom: "10px" }}
+                    style={{ marginBottom: "10px" ,color: "black"}}
                 />
                 <br />
                 <div style={{ display: "flex", justifyContent: "center" }}>
