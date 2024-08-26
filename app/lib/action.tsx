@@ -9,11 +9,12 @@ try {
     console.log(Username,Email,Password)
     connectToDatabase();
     const newUser = new User({
-        Username,
-        Email,
-        Password,
+        username: Username,
+        email: Email,
+        password:Password,
         isAdmin: false
     })
+    console.log(newUser);
     await newUser.save();
     console.log('User registered');
 
