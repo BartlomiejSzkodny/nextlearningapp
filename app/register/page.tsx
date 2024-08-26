@@ -1,7 +1,8 @@
+import { RegisterUser } from "../lib/action";
 export default function Register() {
     return (
         <div style={{  display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <form action="">
+            <form action={RegisterUser}>
                 <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Register</h1>
                 <input
                     type="text"
@@ -27,7 +28,7 @@ export default function Register() {
                 <input
                     type="password"
                     placeholder="Repeat password"
-                    name="Repeat password"
+                    name="Repeatpassword"
                     style={{ marginBottom: "10px",color: "black" }}
                 />
                 <br />
