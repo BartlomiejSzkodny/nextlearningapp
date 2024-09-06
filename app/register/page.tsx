@@ -1,5 +1,7 @@
+
 import { RegisterUser } from "../lib/action";
 export default function Register() {
+
     return (
         <div style={{  display: "flex", flexDirection: "column", alignItems: "center" }}>
             <form action={RegisterUser}>
@@ -24,7 +26,10 @@ export default function Register() {
                     name="Password"
                     style={{ marginBottom: "10px",color: "black" }}
                 />
+                
+                <ERROR message=""  />
                 <br />
+                
                 <input
                     type="password"
                     placeholder="Repeat password"
@@ -32,6 +37,7 @@ export default function Register() {
                     style={{ marginBottom: "10px",color: "black" }}
                 />
                 <br />
+                
                 <div style={{ display: "flex", justifyContent: "center" }}>
                     <button
                         style={{
@@ -48,6 +54,7 @@ export default function Register() {
                     </button>
                 </div>
             </form>
+            
             <div>
                 <p style={{ marginTop: "10px", textAlign: "center" }}>
                     Already have an account?{" "}
@@ -56,6 +63,13 @@ export default function Register() {
                     </a>
                 </p>
             </div>
+        </div>
+    );
+}
+function ERROR({message}:{message:string}) {
+    return (
+        <div>
+            <div>{message}</div>
         </div>
     );
 }
