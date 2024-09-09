@@ -1,69 +1,68 @@
-
+"use client"
 import { RegisterUser } from "../lib/action";
+import { useState } from "react";
 export default function Register() {
 
-    return (
-        <div style={{  display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <form action={RegisterUser}>
-                <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Register</h1>
-                <input
-                    type="text"
-                    placeholder="Username"
-                    name="Username"
-                    style={{ marginBottom: "10px" ,color: "black"}}
-                />
-                <br />
-                <input
-                    type="email"
-                    placeholder="Email"
-                    name="Email"
-                    style={{ marginBottom: "10px" ,color: "black"}}
-                />
-                <br />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    name="Password"
-                    style={{ marginBottom: "10px",color: "black" }}
-                />
-                
-                <ERROR message=""  />
-                <br />
-                
-                <input
-                    type="password"
-                    placeholder="Repeat password"
-                    name="Repeatpassword"
-                    style={{ marginBottom: "10px",color: "black" }}
-                />
-                <br />
-                
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <button
-                        style={{
-                            marginTop: "10px",
-                            backgroundColor: "blue",
-                            color: "white",
-                            padding: "10px",
-                            borderRadius: "5px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Register
-                    </button>
+
+
+    const [username,setUsername] = useState<string>();
+    const [email,setEmail] = useState<string>();
+    const [password,setPassword] = useState<string>();
+    const [repeat,setRepeat] = useState<string>();
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        const formData = {
+            username: username,
+            email: email,
+            password: password,
+            repeat: repeat
+
+        };
+        
+        await RegisterUser(formData);
+    }
+
+    return (<div>
+        
+        <div className="registerPage" >
+            <form onSubmit={handleSubmit}>
+                <h1>Register</h1>
+                <div>
+                    <label>
+                    <input type="text" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)}  />
+                </label>
                 </div>
+                
+                <div>
+                    <label>
+                    <input type="text" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                </label>
+                </div>
+                <div>
+                    <label>
+                    <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                </label>
+                </div>
+                
+                <div>
+                    <label>
+                    <input type="password" name="repeat" placeholder="Repeat password" onChange={(e) => setRepeat(e.target.value)} />
+                </label>
+                </div>
+                
+                
+                
+                
+                
+                <ERROR message="kk" />
+                <button type="submit">Register</button>
             </form>
-            
-            <div>
-                <p style={{ marginTop: "10px", textAlign: "center" }}>
-                    Already have an account?{" "}
-                    <a href="/login" style={{ textDecoration: "underline" }}>
-                        Login
-                    </a>
-                </p>
-            </div>
         </div>
+        
+    </div>
+
+        
     );
 }
 function ERROR({message}:{message:string}) {

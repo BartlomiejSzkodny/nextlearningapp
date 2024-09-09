@@ -40,3 +40,14 @@ body {
     padding-left: 30px;
     padding-right: 30px; 
 }
+.registerPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /*space evenly*/
+    
+
+
+}

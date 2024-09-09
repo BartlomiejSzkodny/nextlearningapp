@@ -6,7 +6,12 @@ import { redirect } from 'next/navigation'
 export const RegisterUser = async (formData: any) => {
     
 
-    const {Username,Email,Password,Repeatpassword} = Object.fromEntries(formData) ;
+    const Username = formData.username;
+    const Email = formData.email;
+    const Password = formData.password;
+    const Repeatpassword = formData.repeat
+
+
 try {
     console.log(Username,Email,Password,Repeatpassword);
     connectToDatabase();
