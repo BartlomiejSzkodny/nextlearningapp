@@ -10,6 +10,8 @@ export default function Register() {
     const [password,setPassword] = useState<string>();
     const [repeat,setRepeat] = useState<string>();
 
+    let errory: string = '';
+
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         const formData = {
@@ -55,7 +57,7 @@ export default function Register() {
                 
                 
                 
-                <ERROR message="kk" />
+                <ERROR message={errory} />
                 <button type="submit">Register</button>
             </form>
         </div>

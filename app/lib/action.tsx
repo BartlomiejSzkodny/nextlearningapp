@@ -13,7 +13,7 @@ export const RegisterUser = async (formData: any) => {
 
 
 try {
-    console.log(Username,Email,Password,Repeatpassword);
+    
     connectToDatabase();
     const newUser = new User({
         username: Username,
@@ -21,6 +21,7 @@ try {
         password:Password,
         isAdmin: false
     })
+
     
     if (Password !== Repeatpassword) {
         console.log('Passwords do not match');
@@ -42,7 +43,7 @@ try {
 
 } catch (error) {
     console.log(error);
-    throw new Error('Error registering user');
+    return error;
     
 }
 
