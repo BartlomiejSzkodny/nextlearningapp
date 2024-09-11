@@ -10,7 +10,7 @@ export default function Register() {
     const [password,setPassword] = useState<string>();
     const [repeat,setRepeat] = useState<string>();
 
-    let errory: string = '';
+    let [errory, setErrory] = useState<string>();
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -22,7 +22,7 @@ export default function Register() {
 
         };
         
-        await RegisterUser(formData);
+        setErrory(await RegisterUser(formData));
     }
 
     return (<div>
@@ -67,7 +67,8 @@ export default function Register() {
         
     );
 }
-function ERROR({message}:{message:string}) {
+function ERROR({message}:{message:any}) {
+    if (!message) return null;
     return (
         <div>
             <div>{message}</div>
