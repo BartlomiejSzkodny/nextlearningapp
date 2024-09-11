@@ -1,4 +1,5 @@
 "use server";
+import { error } from "console";
 import { User } from "./models";
 import { connectToDatabase } from "./utils";
 import { redirect } from 'next/navigation';
@@ -6,6 +7,7 @@ import { redirect } from 'next/navigation';
 export const RegisterUser = async (formData:any) => {
     const { username, email, password, repeat } = formData;
     console.log(username, email, password, repeat);
+    var err = false;
 
     try {
         // Ensure the database connection is established
@@ -36,10 +38,13 @@ export const RegisterUser = async (formData:any) => {
         const userDocument = new User(newUser);
         await userDocument.save();
 
-        // Redirect after successful registration
-        redirect('http://localhost:3000/login');
+        
     } catch (error) {
-        console.log('Error registering user:');
+        console.log('Error registering user:',error);
+        err=true;
         return 'Error registering user';
+    }
+    if (!err){
+        redirect('/login');
     }
 };
