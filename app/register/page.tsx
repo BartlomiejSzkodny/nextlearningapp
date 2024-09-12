@@ -29,7 +29,7 @@ export default function Register() {
         
         <div className="registerPage" >
             <form onSubmit={handleSubmit}>
-                <h1 style={{ fontSize:"30px"}}>Register</h1>
+                <h1 style={{ fontSize:"40px",marginBottom:"20px"}}>Register</h1>
                 <div>
                     <label>
                     <input type="text" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}} />
@@ -60,6 +60,14 @@ export default function Register() {
                 <ERROR message={errory} />
                 <button type="submit" className="RegisterButton">Register</button>
             </form>
+            <div>
+                <p style={{ marginTop: "10px", textAlign: "center" }}>
+                    Already have a account?{" "}
+                    <a href="/login" style={{ textDecoration: "underline" }}>
+                        Login
+                    </a>
+                </p>
+            </div>
         </div>
         
     </div>

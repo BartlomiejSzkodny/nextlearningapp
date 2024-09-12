@@ -1,37 +1,50 @@
+"use client"
+import { useState } from "react";
 export default function Login() {
-    return (
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <form action="">
-                <h1 style={{ textAlign: "center", fontSize: 28, marginBottom: 20 }}>Login</h1>
-                <input
-                    type="email"
-                    placeholder="Email"
-                    name="Email"
-                    style={{ marginBottom: "10px" ,color: "black"}}
-                />
-                <br />
-                <input
-                    type="password"
-                    placeholder="Password"
-                    name="Password"
-                    style={{ marginBottom: "10px" ,color: "black"}}
-                />
-                <br />
-                <div style={{ display: "flex", justifyContent: "center" }}>
-                    <button
-                        style={{
-                            marginTop: "10px",
-                            backgroundColor: "blue",
-                            color: "white",
-                            padding: "10px",
-                            borderRadius: "5px",
-                            border: "none",
-                            cursor: "pointer",
-                        }}
-                    >
-                        Login
-                    </button>
+
+
+
+    const [email,setEmail] = useState<string>();
+    const [password,setPassword] = useState<string>();
+
+
+    let [errory, setErrory] = useState<string>();
+
+    const handleSubmit = async (e: any) => {
+        e.preventDefault();
+        const formData = {
+            email: email,
+            password: password,
+
+        };
+        
+        //setErrory(await RegisterUser(formData));//make here function for login
+    }
+
+    return (<div>
+        
+        <div className="registerPage" >
+            <form onSubmit={handleSubmit}>
+                <h1 style={{ fontSize:"40px",marginBottom:"20px"}}>Login</h1>
+                
+                <div>
+                    <label>
+                    <input type="text" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
+                </label>
                 </div>
+                <div>
+                    <label>
+                    <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
+                </label>
+                </div>
+                
+                
+                
+                
+                
+                
+                <ERROR message={errory} />
+                <button type="submit" className="RegisterButton">Login</button>
             </form>
             <div>
                 <p style={{ marginTop: "10px", textAlign: "center" }}>
@@ -41,6 +54,18 @@ export default function Login() {
                     </a>
                 </p>
             </div>
+        </div>
+        
+    </div>
+
+        
+    );
+}
+function ERROR({message}:{message:any}) {
+    if (!message) return null;
+    return (
+        <div>
+            <div className="ErrorPassword">{message}</div>
         </div>
     );
 }
