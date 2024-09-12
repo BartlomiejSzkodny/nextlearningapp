@@ -12,6 +12,10 @@ export const RegisterUser = async (formData:any) => {
     try {
         // Ensure the database connection is established
         await connectToDatabase();
+        if (!username || !email || !password || !repeat) {
+            console.log('All fields are required');
+            return 'All fields are required';
+        }
 
         // Check if passwords match
         if (password !== repeat) {

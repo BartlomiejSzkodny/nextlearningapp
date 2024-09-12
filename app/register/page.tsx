@@ -29,27 +29,27 @@ export default function Register() {
         
         <div className="registerPage" >
             <form onSubmit={handleSubmit}>
-                <h1>Register</h1>
+                <h1 style={{ fontSize:"30px"}}>Register</h1>
                 <div>
                     <label>
-                    <input type="text" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)}  />
+                    <input type="text" name="username" placeholder="Username" onChange={(e) => setUsername(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}} />
                 </label>
                 </div>
                 
                 <div>
                     <label>
-                    <input type="text" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
+                    <input type="text" name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
                 </label>
                 </div>
                 <div>
                     <label>
-                    <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
+                    <input type="password" name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
                 </label>
                 </div>
                 
                 <div>
                     <label>
-                    <input type="password" name="repeat" placeholder="Repeat password" onChange={(e) => setRepeat(e.target.value)} />
+                    <input type="password" name="repeat" placeholder="Repeat password" onChange={(e) => setRepeat(e.target.value)} style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
                 </label>
                 </div>
                 
@@ -58,7 +58,7 @@ export default function Register() {
                 
                 
                 <ERROR message={errory} />
-                <button type="submit">Register</button>
+                <button type="submit" className="RegisterButton">Register</button>
             </form>
         </div>
         
@@ -71,7 +71,7 @@ function ERROR({message}:{message:any}) {
     if (!message) return null;
     return (
         <div>
-            <div>{message}</div>
+            <div className="ErrorPassword">{message}</div>
         </div>
     );
 }
