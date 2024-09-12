@@ -1,5 +1,4 @@
 "use server";
-import { error } from "console";
 import { User } from "./models";
 import { connectToDatabase } from "./utils";
 import { redirect } from 'next/navigation';
