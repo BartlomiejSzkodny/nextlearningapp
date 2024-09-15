@@ -1,6 +1,6 @@
 "use client"
 import { login } from "../lib/cookieslog";
-export default async function Register() {
+export default function Login() {
 function handleSubmi(e: any) {
     login();
 }
