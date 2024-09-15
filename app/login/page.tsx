@@ -1,27 +1,44 @@
-'use server'
-import {cookies} from "next/headers";
+"use client"
+import { handleSubmit } from "./loginform";
+export default async function Register() {
+function handleSubmi(e: any) {
+    e.preventDefault();
+    handleSubmit();
+}
 
-export default function Login() {
+    
+
     return (<div>
-        <div className="loginPage" >
-            <form>
-                <h1 style={{ fontSize:"40px",marginBottom:"20px"}}>Login</h1>
-                <div>
-                    <label>
-                    <input type="text" name="username" placeholder="Username" style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}} />
-                </label>
-                </div>
+        
+        <div className="registerPage" >
+            <form onSubmit={handleSubmi}>
+                <h1 style={{ fontSize:"40px",marginBottom:"20px"}}>Log in</h1>
                 
                 <div>
                     <label>
-                    <input type="password" name="password" placeholder="Password" style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
+                    <input type="text" name="email" placeholder="Email" style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
+                </label>
+                </div>
+                <div>
+                    <label>
+                    <input type="password" name="password" placeholder="Password"  style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}/>
                 </label>
                 </div>
                 
-                <div>
-                    <button type="submit" style={{ marginBottom: "5px",marginTop:"5px" ,color: "black"}}>Login</button>
-                </div>
+                <button type="submit" className="RegisterButton">Login</button>
             </form>
+            <div>
+                <p style={{ marginTop: "10px", textAlign: "center" }}>
+                    No account?{" "}
+                    <a href="/register" style={{ textDecoration: "underline" }}>
+                        Register
+                    </a>
+                </p>
+            </div>
         </div>
-    </div>);
+        
+    </div>
+
+        
+    );
 }
