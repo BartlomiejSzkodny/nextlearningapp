@@ -1,10 +1,15 @@
+"use client";
 import Link from "next/link";
-import {cookies} from 'next/headers';
+import { iflogged,logout } from "../../lib/cookieslog";
 
 
 export default function Navbar() {
+
+    function logoutbutton(){
+        logout();
+    }
     
-    if (cookies().has("loggedIn")){
+    if (iflogged()){
         return (
             <nav>
                 <div className="navbar">
@@ -12,7 +17,7 @@ export default function Navbar() {
                     <div></div>
                             <Link href="/">Home</Link>
                             <Link href="/profile">Profile</Link>
-                            <Link href="/logout">Logout</Link>
+                            <Link href="/" onClick={logoutbutton}>Logout</Link>
                     <div></div>
                 </div>
             </nav>

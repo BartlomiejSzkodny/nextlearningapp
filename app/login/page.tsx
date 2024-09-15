@@ -1,9 +1,8 @@
 "use client"
-import { handleSubmit } from "./loginform";
+import { login } from "../lib/cookieslog";
 export default async function Register() {
 function handleSubmi(e: any) {
-    e.preventDefault();
-    handleSubmit();
+    login();
 }
 
     
